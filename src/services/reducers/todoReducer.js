@@ -1,10 +1,9 @@
-import { ADDTODO, DELETETODO } from "../constants/Constants";
+import { ADDTODO, DELETETODO, RESET } from "../constants/Constants";
 
 
 const initialData = {
     arr: [],
 };
-
 
 
 const todoReducers = (state = initialData, action) => {
@@ -17,11 +16,15 @@ const todoReducers = (state = initialData, action) => {
                 arr: [...state.arr, { _id, data }]
             }
         case DELETETODO:
-            return{
+            return {
                 ...state,
-                arr : state.arr.filter(one=>one._id !==action.payload._id)
+                arr: state.arr.filter(one => one._id !== action.payload._id)
             }
-
+        case RESET:
+            return {
+                ...state,
+                arr: []
+            }
         default:
             return state;
     }

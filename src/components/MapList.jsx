@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { FaTrashAlt } from "react-icons/fa";
-import { deleteTodo } from "../services/actions/todoAction";
+import { deleteTodo, resetAction } from "../services/actions/todoAction";
 
 
 const MapList = () => {
@@ -28,7 +28,7 @@ const MapList = () => {
             {
                 datas?.length > 0 &&
                 <div className=" text-center">
-                    <button className="btn bg-red-700 text-white btn-sm mt-3">Reset</button>
+                    <button onClick={()=>dispatch(resetAction())} className="btn bg-red-700 text-white btn-sm mt-3">Reset</button>
                 </div>
             }
         </div>

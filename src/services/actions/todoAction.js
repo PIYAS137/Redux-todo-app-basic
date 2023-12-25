@@ -1,4 +1,4 @@
-import { ADDTODO, DELETETODO } from "../constants/Constants"
+import { ADDTODO, DELETETODO, RESET } from "../constants/Constants"
 
 
 
@@ -19,5 +19,11 @@ export const deleteTodo = (sid)=>{
         payload : {
             _id : sid
         }
+    }
+}
+
+export const resetAction = ()=>{
+    return {
+        type: RESET
     }
 }
