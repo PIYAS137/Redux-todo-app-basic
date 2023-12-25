@@ -1,10 +1,20 @@
+import { useSelector } from "react-redux"
 
 
 const MapList = () => {
+    const datas = useSelector(state =>state.arr);
+
+
+
   return (
     <div>
-        <h1 className=" bg-black text-yellow-300 p-2 rounded-lg px-5 mt-2">The first task</h1>
-        <h1 className=" bg-black text-yellow-300 p-2 rounded-lg px-5 mt-2">The first task</h1>
+        {
+            datas.map((one)=>{
+                return(
+                    <h1 key={one._id} className=" bg-black text-yellow-300 p-2 rounded-lg px-5 mt-2">{one.data}</h1>
+                )
+            })
+        }
     </div>
   )
 }
