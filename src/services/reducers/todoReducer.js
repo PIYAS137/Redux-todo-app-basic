@@ -1,4 +1,4 @@
-import { ADDTODO } from "../constants/Constants";
+import { ADDTODO, DELETETODO } from "../constants/Constants";
 
 
 const initialData = {
@@ -15,6 +15,11 @@ const todoReducers = (state = initialData, action) => {
             return {
                 ...state,
                 arr: [...state.arr, { _id, data }]
+            }
+        case DELETETODO:
+            return{
+                ...state,
+                arr : state.arr.filter(one=>one._id !==action.payload._id)
             }
 
         default:

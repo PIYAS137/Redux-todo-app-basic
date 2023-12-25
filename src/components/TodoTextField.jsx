@@ -16,7 +16,7 @@ const TodoTextField = () => {
 
     return (
         <form onSubmit={handleSubmit} className=" flex space-x-2">
-            <input onChange={e=>setVal(e.target.value)} value={val} type="text" placeholder="✍ Type here " className="input text-white bg-black input-bordered input-primary w-full" />
+            <input onChange={e=>setVal(e.target.value)} value={val} type="text" placeholder="✍ Type here " className="input text-white bg-black input-bordered border-yellow-500 w-full" />
             <button type='submit' className="btn bg-yellow-500 border-none text-gray">ADD</button>
         </form>
     )
